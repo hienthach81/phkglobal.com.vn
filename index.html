@@ -8,202 +8,90 @@
     body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#333; }
 
     /* Banner */
-    .banner {
-      position: relative;
-      height: 400px;
-      overflow: hidden;
-    }
-    .banner img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      position: absolute;
-      animation: fade 40s infinite;
-      opacity: 0;
-    }
-    .banner img:nth-child(1) { animation-delay: 0s; }
-    .banner img:nth-child(2) { animation-delay: 10s; }
-    .banner img:nth-child(3) { animation-delay: 20s; }
-    .banner img:nth-child(4) { animation-delay: 30s; }
-    @keyframes fade {
-      0% {opacity:0;}
-      10% {opacity:1;}
-      25% {opacity:1;}
-      35% {opacity:0;}
-      100% {opacity:0;}
-    }
+    .banner { position:relative; height:400px; overflow:hidden; }
+    .banner img { width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 1s; }
+    .banner img.active { opacity:1; }
 
     /* Navbar */
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #5c4033; /* nâu */
-      padding: 10px 30px;
-    }
-    .navbar img { height: 50px; border-radius: 50%; }
-    .menu { display: flex; gap: 20px; }
-    .menu > div { position: relative; }
-    .menu a {
-      color: white; text-decoration: none; font-weight: bold;
-      padding: 8px; display: inline-block;
-    }
-    .menu a:hover { text-decoration: underline; }
-    .dropdown {
-      display: none;
-      position: absolute;
-      background: #fff;
-      min-width: 180px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    .dropdown a {
-      color: #333; display: block; padding: 10px;
-    }
-    .menu > div:hover .dropdown { display: block; }
+    .navbar { display:flex; justify-content:space-between; align-items:center; background:#4b2e2e; color:white; padding:10px 20px; }
+    .navbar .logo { display:flex; align-items:center; }
+    .navbar .logo img { height:50px; margin-right:10px; border-radius:50%; }
+    .navbar nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; }
+    .navbar nav a:hover { text-decoration:underline; }
+    .lang { margin-left:20px; }
 
-    /* Section titles */
-    h2 { text-align:center; margin: 40px 0 20px; }
-
-    /* Product slider */
-    .products {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 0 20px 20px;
-      scroll-behavior: smooth;
-    }
-    .products img { height: 200px; border-radius: 10px; }
-
-    /* Categories */
-    .categories {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
-    }
-    .categories div {
-      background: #f5f5f5;
-      padding: 20px;
-      border-radius: 10px;
-      width: 200px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .categories div:hover { background: #ddd; }
-
-    /* Partners */
-    .partners {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-    .partners img { height: 60px; }
+    /* Products carousel */
+    .products { padding:40px 20px; text-align:center; }
+    .product-list { display:flex; overflow-x:auto; gap:20px; padding:20px 0; }
+    .product { flex:0 0 250px; border:1px solid #ddd; border-radius:10px; padding:10px; background:#fafafa; }
+    .product img { width:100%; height:150px; object-fit:cover; border-radius:10px; }
 
     /* Footer */
-    footer {
-      background: #5c4033;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      position: relative;
-    }
-    .social {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    .social a {
-      color: white; text-decoration: none; font-size: 18px;
-      border: 1px solid white; padding: 8px 12px; border-radius: 5px;
-    }
-    .social a:hover { background: white; color: #5c4033; }
+    footer { background:#4b2e2e; color:white; padding:20px; text-align:center; }
   </style>
 </head>
 <body>
-
-  <!-- Banner -->
+  <!-- Banner slideshow -->
   <div class="banner">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Bamboo_forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg" alt="Tre Việt Nam 1">
-    <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6" alt="Tre Việt Nam 2">
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Tre Việt Nam 3">
-    <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66" alt="Tre Việt Nam 4">
+    <img src="https://picsum.photos/id/1011/1200/400" class="active" alt="Tre Việt 1">
+    <img src="https://picsum.photos/id/1015/1200/400" alt="Tre Việt 2">
+    <img src="https://picsum.photos/id/1016/1200/400" alt="Tre Việt 3">
+    <img src="https://picsum.photos/id/1025/1200/400" alt="Tre Việt 4">
   </div>
 
   <!-- Navbar -->
   <div class="navbar">
-    <img src="https://via.placeholder.com/100" alt="Logo">
-    <div class="menu">
-      <div>
-        <a href="#">Nhập khẩu | Import</a>
-        <div class="dropdown">
-          <a href="#">Thực phẩm</a>
-          <a href="#">Đồ gia dụng</a>
-          <a href="#">Khác</a>
-        </div>
-      </div>
-      <div>
-        <a href="#">Xuất khẩu | Export</a>
-        <div class="dropdown">
-          <a href="#">Tre</a>
-          <a href="#">Đồ thủ công</a>
-          <a href="#">Nông sản</a>
-        </div>
-      </div>
-      <div>
-        <a href="#">Cơ hội hợp tác | Opportunities</a>
-        <div class="dropdown">
-          <a href="#">Đầu tư</a>
-          <a href="#">Phân phối</a>
-          <a href="#">Đại lý</a>
-        </div>
-      </div>
-      <a href="#contact">Liên hệ | Contact</a>
-      <a href="#">VN/EN</a>
+    <div class="logo">
+      <img src="https://via.placeholder.com/80" alt="Logo">
+      <strong>PHK Global</strong>
+    </div>
+    <nav>
+      <a href="#import">Nhập khẩu</a>
+      <a href="#export">Xuất khẩu</a>
+      <a href="#cooperate">Hợp tác</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+    <div class="lang">
+      <select>
+        <option>VI</option>
+        <option>EN</option>
+      </select>
     </div>
   </div>
 
   <!-- Products -->
-  <h2>Sản phẩm tiêu biểu | Featured Products</h2>
-  <div class="products">
-    <img src="https://via.placeholder.com/300x200?text=Product+1" alt="Sản phẩm 1">
-    <img src="https://via.placeholder.com/300x200?text=Product+2" alt="Sản phẩm 2">
-    <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Sản phẩm 3">
-  </div>
-
-  <!-- Categories -->
-  <h2>Lĩnh vực hoạt động | Categories</h2>
-  <div class="categories">
-    <div>Nhập khẩu</div>
-    <div>Xuất khẩu</div>
-    <div>Hợp tác</div>
-    <div>Khác</div>
-  </div>
-
-  <!-- Partners -->
-  <h2>Đối tác | Partners</h2>
-  <div class="partners">
-    <img src="https://via.placeholder.com/150x60?text=Partner+1" alt="Đối tác 1">
-    <img src="https://via.placeholder.com/150x60?text=Partner+2" alt="Đối tác 2">
-    <img src="https://via.placeholder.com/150x60?text=Partner+3" alt="Đối tác 3">
-  </div>
+  <section class="products" id="export">
+    <h2>Sản phẩm tiêu biểu / Featured Products</h2>
+    <div class="product-list">
+      <div class="product">
+        <img src="https://picsum.photos/id/1040/300/200" alt="Sản phẩm 1">
+        <p>Tre mỹ nghệ</p>
+      </div>
+      <div class="product">
+        <img src="https://picsum.photos/id/1039/300/200" alt="Sản phẩm 2">
+        <p>Nội thất gỗ</p>
+      </div>
+      <div class="product">
+        <img src="https://picsum.photos/id/1051/300/200" alt="Sản phẩm 3">
+        <p>Thủ công mỹ nghệ</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    <p>© 2025 PHK Global. All rights reserved.<br>
-    Địa chỉ công ty | Company address</p>
-    <div class="social">
-      <a href="#">Zalo</a>
-      <a href="#">Telegram</a>
-      <a href="#">WhatsApp</a>
-      <a href="#">Twitter</a>
-    </div>
+  <footer>
+    <p>© 2025 PHK Global | Liên hệ: info@phkglobal.com.vn</p>
   </footer>
 
+  <script>
+    // Simple slideshow
+    let slides = document.querySelectorAll(".banner img");
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.remove("active");
+      i = (i+1) % slides.length;
+      slides[i].classList.add("active");
+    }, 10000);
+  </script>
 </body>
 </html>
