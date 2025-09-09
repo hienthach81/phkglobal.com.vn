@@ -1,97 +1,75 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHK Global</title>
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#333; }
-
-    /* Banner */
-    .banner { position:relative; height:400px; overflow:hidden; }
-    .banner img { width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 1s; }
-    .banner img.active { opacity:1; }
-
-    /* Navbar */
-    .navbar { display:flex; justify-content:space-between; align-items:center; background:#4b2e2e; color:white; padding:10px 20px; }
-    .navbar .logo { display:flex; align-items:center; }
-    .navbar .logo img { height:50px; margin-right:10px; border-radius:50%; }
-    .navbar nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; }
-    .navbar nav a:hover { text-decoration:underline; }
-    .lang { margin-left:20px; }
-
-    /* Products carousel */
-    .products { padding:40px 20px; text-align:center; }
-    .product-list { display:flex; overflow-x:auto; gap:20px; padding:20px 0; }
-    .product { flex:0 0 250px; border:1px solid #ddd; border-radius:10px; padding:10px; background:#fafafa; }
-    .product img { width:100%; height:150px; object-fit:cover; border-radius:10px; }
-
-    /* Footer */
-    footer { background:#4b2e2e; color:white; padding:20px; text-align:center; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHK Global – Kết nối & phát triển bền vững</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <!-- Banner slideshow -->
-  <div class="banner">
-    <img src="https://picsum.photos/id/1011/1200/400" class="active" alt="Tre Việt 1">
-    <img src="https://picsum.photos/id/1015/1200/400" alt="Tre Việt 2">
-    <img src="https://picsum.photos/id/1016/1200/400" alt="Tre Việt 3">
-    <img src="https://picsum.photos/id/1025/1200/400" alt="Tre Việt 4">
-  </div>
-
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">
-      <img src="https://via.placeholder.com/80" alt="Logo">
-      <strong>PHK Global</strong>
-    </div>
-    <nav>
-      <a href="#import">Nhập khẩu</a>
-      <a href="#export">Xuất khẩu</a>
-      <a href="#cooperate">Hợp tác</a>
-      <a href="#contact">Liên hệ</a>
+<body class="font-sans text-gray-800">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">PHK Global</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600">Về chúng tôi</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Dịch vụ</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Liên hệ</a></li>
+      </ul>
     </nav>
-    <div class="lang">
-      <select>
-        <option>VI</option>
-        <option>EN</option>
-      </select>
-    </div>
-  </div>
+  </header>
 
-  <!-- Products -->
-  <section class="products" id="export">
-    <h2>Sản phẩm tiêu biểu / Featured Products</h2>
-    <div class="product-list">
-      <div class="product">
-        <img src="https://picsum.photos/id/1040/300/200" alt="Sản phẩm 1">
-        <p>Tre mỹ nghệ</p>
-      </div>
-      <div class="product">
-        <img src="https://picsum.photos/id/1039/300/200" alt="Sản phẩm 2">
-        <p>Nội thất gỗ</p>
-      </div>
-      <div class="product">
-        <img src="https://picsum.photos/id/1051/300/200" alt="Sản phẩm 3">
-        <p>Thủ công mỹ nghệ</p>
+  <!-- Hero -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+    <h2 class="text-4xl md:text-6xl font-bold mb-6">PHK Global</h2>
+    <p class="text-xl md:text-2xl mb-8">Kết nối & phát triển bền vững</p>
+    <a href="#contact" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-full shadow hover:bg-gray-100 transition">Liên hệ ngay</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-8">Về chúng tôi</h3>
+    <p class="max-w-3xl mx-auto text-center text-lg text-gray-600">
+      Đây là đoạn giới thiệu placeholder về PHK Global. Hiển có thể chỉnh sửa nội dung sau để mô tả rõ ràng hơn về công ty, sứ mệnh và giá trị cốt lõi.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12">Dịch vụ của chúng tôi</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-4">Dịch vụ A</h4>
+          <p class="text-gray-600">Mô tả ngắn gọn dịch vụ A. Hiển có thể thay đổi phần này.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-4">Dịch vụ B</h4>
+          <p class="text-gray-600">Mô tả ngắn gọn dịch vụ B. Hiển có thể thay đổi phần này.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-4">Dịch vụ C</h4>
+          <p class="text-gray-600">Mô tả ngắn gọn dịch vụ C. Hiển có thể thay đổi phần này.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 PHK Global | Liên hệ: info@phkglobal.com.vn</p>
-  </footer>
+  <!-- Contact -->
+  <section id="contact" class="py-20 container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-8">Liên hệ với chúng tôi</h3>
+    <form class="max-w-xl mx-auto bg-white shadow p-8 rounded-2xl space-y-4">
+      <input type="text" placeholder="Tên của bạn" class="w-full p-3 border rounded-lg" />
+      <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg" />
+      <textarea placeholder="Nội dung" class="w-full p-3 border rounded-lg h-32"></textarea>
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Gửi</button>
+    </form>
+  </section>
 
-  <script>
-    // Simple slideshow
-    let slides = document.querySelectorAll(".banner img");
-    let i = 0;
-    setInterval(() => {
-      slides[i].classList.remove("active");
-      i = (i+1) % slides.length;
-      slides[i].classList.add("active");
-    }, 10000);
-  </script>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 text-center py-6">
+    <p>© PHK Global 2025. All rights reserved.</p>
+  </footer>
 </body>
 </html>
