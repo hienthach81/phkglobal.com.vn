@@ -4,120 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PHK Global</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
     header {
-      position: fixed; top: 0; width: 100%; z-index: 1000;
-      background: rgba(0,0,0,0.7); color: white; padding: 10px 20px;
-      display: flex; justify-content: space-between; align-items: center;
+      background: #004080;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    header nav a { color: white; margin: 0 10px; text-decoration: none; }
-    .lang-switch { margin-left: 20px; }
-    .contact-icons {
-      position: fixed; top: 40%; right: 10px; display: flex; flex-direction: column; gap: 10px;
+    header nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .contact-icons a img { width: 32px; height: 32px; }
-    section { padding: 100px 20px; text-align: center; }
-    hr { margin: 50px auto; width: 60%; }
-    .banner { height: 100vh; }
-    .banner .swiper { width: 100%; height: 100%; }
-    .banner .swiper-slide {
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2em; color: white; font-weight: bold;
-      background-size: cover; background-position: center;
+    header nav a:hover {
+      text-decoration: underline;
     }
-    .about {
-      background: url('images/ve-chung-toi-collage.jpg') no-repeat center center/cover;
-      color: white; height: 80vh; display: flex; align-items: center; justify-content: center;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    .lang-switch {
+      background: #fff;
+      color: #004080;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
     }
-    .services { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .service-box {
-      flex: 1 1 250px; background: #f4f4f4; padding: 20px; border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    .banner {
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url("https://picsum.photos/1200/400?random=1") no-repeat center/cover;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
-    footer { background: #222; color: white; padding: 20px; }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section h2 {
+      margin-bottom: 20px;
+      color: #004080;
+    }
+    .divider {
+      width: 80%;
+      margin: 40px auto;
+      border-top: 2px solid #ccc;
+    }
+    .about img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .service-card {
+      background: #f4f4f4;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .quick-links {
+      position: fixed;
+      top: 40%;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .quick-links a {
+      background: #004080;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="logo">🌐 PHK Global</div>
     <nav>
-      <a href="#banner">Trang chủ</a>
+      <a href="#home">Trang chủ</a>
       <a href="#about">Về chúng tôi</a>
       <a href="#services">Dịch vụ</a>
       <a href="#contact">Liên hệ</a>
-      <span class="lang-switch">VI | EN</span>
     </nav>
+    <button class="lang-switch">EN</button>
   </header>
 
-  <!-- Contact Quick Icons -->
-  <div class="contact-icons">
-    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2504/2504739.png" alt="Zalo"></a>
-    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
-    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+  <div class="banner" id="home">
+    Chào mừng đến với PHK Global
   </div>
 
-  <!-- Banner -->
-  <section id="banner" class="banner">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url('https://source.unsplash.com/1600x900/?asia');">Châu Á</div>
-        <div class="swiper-slide" style="background-image:url('https://source.unsplash.com/1600x900/?europe');">Châu Âu</div>
-        <div class="swiper-slide" style="background-image:url('https://source.unsplash.com/1600x900/?africa');">Châu Phi</div>
-        <div class="swiper-slide" style="background-image:url('https://source.unsplash.com/1600x900/?america');">Châu Mỹ</div>
-        <div class="swiper-slide" style="background-image:url('https://source.unsplash.com/1600x900/?australia');">Châu Úc</div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
+  <div class="divider"></div>
 
-  <hr>
-
-  <!-- About -->
   <section id="about" class="about">
     <h2>Về chúng tôi</h2>
-    <p>PHK Global – Kết nối và phát triển bền vững. (Hiển viết nội dung tại đây)</p>
+    <p>PHK Global là cầu nối thương mại toàn cầu, mang hàng hóa Việt Nam đến thế giới và đưa tinh hoa thế giới về Việt Nam.</p>
+    <img src="https://via.placeholder.com/600x400.png?text=Ghep+4+anh+lang-que" alt="Về chúng tôi">
   </section>
 
-  <hr>
+  <div class="divider"></div>
 
-  <!-- Services -->
-  <section id="services">
+  <section id="services" class="services">
     <h2>Dịch vụ chính</h2>
-    <div class="services">
-      <div class="service-box">Hàng thủ công mỹ nghệ</div>
-      <div class="service-box">Hàng nhập khẩu</div>
-      <div class="service-box">Hàng xuất khẩu</div>
-    </div>
+    <div class="service-card">Hàng thủ công mỹ nghệ</div>
+    <div class="service-card">Hàng nhập khẩu</div>
+    <div class="service-card">Hàng xuất khẩu</div>
   </section>
 
-  <hr>
+  <div class="divider"></div>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Liên hệ</h2>
     <p>Email: info@phkglobal.com.vn</p>
-    <p>Điện thoại: +84 xxx xxx xxx</p>
+    <p>Điện thoại: +84 123 456 789</p>
   </section>
 
-  <!-- Footer -->
+  <div class="quick-links">
+    <a href="#">Z</a>
+    <a href="#">T</a>
+    <a href="#">I</a>
+    <a href="#">X</a>
+  </div>
+
   <footer>
     <p>&copy; 2025 PHK Global. All rights reserved.</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      pagination: { el: '.swiper-pagination' },
-      autoplay: { delay: 3000 },
-    });
-  </script>
 
 </body>
 </html>
